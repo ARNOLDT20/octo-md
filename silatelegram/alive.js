@@ -5,12 +5,32 @@ module.exports = {
             await ctx.replyWithPhoto(
                 { url: 'https://files.catbox.moe/natk49.jpg' },
                 {
-                    caption: `🤖 *𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝙱𝙾𝚃 𝙸𝚂 𝙰𝙻𝙸𝚅𝙴!* 🤖\n\n✨ 𝚂𝚝𝚊𝚝𝚞𝚜: 𝙰𝚌𝚝𝚒𝚟𝚎 & 𝚁𝚞𝚗𝚗𝚒𝚗𝚐\n⏰ 𝚄𝚙𝚝𝚒𝚖𝚎: 24/7\n🔧 𝚅𝚎𝚛𝚜𝚒𝚘𝚗: 3.0.0\n📊 𝙿𝚎𝚛𝚏𝚘𝚛𝚖𝚊𝚗𝚌𝚎: 𝙾𝚙𝚝𝚒𝚖𝚊𝚕\n\n🚀 *𝙵𝚎𝚊𝚝𝚞𝚛𝚎𝚜:*\n• 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝙱𝚘𝚝 𝙿𝚊𝚒𝚛𝚒𝚗𝚐\n• 𝙰𝚞𝚝𝚘-𝙵𝚘𝚕𝚕𝚘𝚠 𝙲𝚑𝚊𝚗𝚗𝚎𝚕𝚜\n• 𝙰𝙸 𝙸𝚗𝚝𝚎𝚐𝚛𝚊𝚝𝚒𝚘𝚗\n• 𝙼𝚞𝚕𝚝𝚒-𝙽𝚞𝚖𝚋𝚎𝚛 𝚂𝚞𝚙𝚙𝚘𝚛𝚝\n\n> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡`,
+                    caption: `🤖 *𝐎𝐂𝐓𝐎-𝐌𝐃 𝐁𝐎𝐓 𝐈𝐒 𝐀𝐋𝐈𝐕𝐄!* 🤖
+
+✨ Status: Active & Running
+⏰ Uptime: 24/7
+🔧 Version: 3.0.0
+📊 Performance: Optimal
+
+🚀 *Features:*
+• WhatsApp Bot Pairing
+• Auto-Follow Channels
+• AI Integration
+• Multi-Number Support
+
+> © 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐎𝐜𝐭𝐨 𝐓𝐞𝐜𝐡`,
                     parse_mode: 'Markdown'
                 }
             );
         } catch (error) {
-            await ctx.reply(`🤖 *𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝙱𝙾𝚃 𝙸𝚂 𝙰𝙻𝙸𝚅𝙴!* 🤖\n\n✨ 𝚂𝚝𝚊𝚝𝚞𝚜: 𝙰𝚌𝚝𝚒𝚟𝚎 & 𝚁𝚞𝚗𝚗𝚒𝚗𝚐\n⏰ 𝚄𝚙𝚝𝚒𝚖𝚎: 24/7\n🔧 𝚅𝚎𝚛𝚜𝚒𝚘𝚗: 3.0.0\n📊 𝙿𝚎𝚛𝚏𝚘𝚛𝚖𝚊𝚗𝚌𝚎: 𝙾𝚙𝚝𝚒𝚖𝚊𝚕\n\n> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡`, { parse_mode: 'Markdown' });
+            await ctx.reply(`🤖 *𝐎𝐂𝐓𝐎-𝐌𝐃 𝐁𝐎𝐓 𝐈𝐒 𝐀𝐋𝐈𝐕𝐄!* 🤖
+
+✨ Status: Active & Running
+⏰ Uptime: 24/7
+🔧 Version: 3.0.0
+📊 Performance: Optimal
+
+> © 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐎𝐜𝐭𝐨 𝐓𝐞𝐜𝐡`, { parse_mode: 'Markdown' });
         }
     }
 };

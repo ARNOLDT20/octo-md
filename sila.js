@@ -1330,9 +1330,9 @@ if (config.TELEGRAM_BOT_TOKEN) {
     }
 
     bot.start((ctx) => {
-        const welcomeMessage = `🤖 *𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝙱𝙾𝚃 𝙿𝙰𝙸𝚁𝙸𝙽𝙶 𝚂𝚈𝚂𝚃𝙴𝙼* 🤖
+        const welcomeMessage = `🤖 *OCTO MD 𝙱𝙾𝚃 𝙿𝙰𝙸𝚁𝙸𝙽𝙶 𝚂𝚈𝚂𝚃𝙴𝙼* 🤖
 
-👋 𝚆𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝙱𝚘𝚝 𝙿𝚊𝚒𝚛𝚒𝚗𝚐 𝚂𝚢𝚜𝚝𝚎𝚖!
+👋 𝚆𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 OCTO MD 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝙱𝚘𝚝 𝙿𝚊𝚒𝚛𝚒𝚗𝚐 𝚂𝚢𝚜𝚝𝚎𝚖!
 
 📱 *𝙷𝚘𝚠 𝚝𝚘 𝚞𝚜𝚎:*
 1️⃣ 𝚄𝚜𝚎 /𝚙𝚊𝚒𝚛 <𝚗𝚞𝚖𝚋𝚎𝚛> 𝚝𝚘 𝚙𝚊𝚒𝚛 𝚢𝚘𝚞𝚛 𝚋𝚘𝚝
@@ -1340,7 +1340,7 @@ if (config.TELEGRAM_BOT_TOKEN) {
 3️⃣ 𝙴𝚗𝚝𝚎𝚛 𝚝𝚑𝚎 𝚌𝚘𝚍𝚎 𝚒𝚗 𝚢𝚘𝚞𝚛 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙
 4️⃣ 𝚈𝚘𝚞𝚛 𝚋𝚘𝚝 𝚠𝚒𝚕𝚕 𝚋𝚎 𝚌𝚘𝚗𝚗𝚎𝚌𝚝𝚎𝚍!
 
-📌 *𝙴𝚡𝚊𝚖𝚙𝚕𝚎:* /𝚙𝚊𝚒𝚛 255789661031
+📌 *𝙴𝚡𝚊𝚖𝚙𝚕𝚎:* /𝚙𝚊𝚒𝚛 255627417402
 
 🔧 *𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜:*
 /𝚜𝚝𝚊𝚛𝚝 - 𝚂𝚑𝚘𝚠 𝚝𝚑𝚒𝚜 𝚖𝚎𝚜𝚜𝚊𝚐𝚎
@@ -1351,7 +1351,7 @@ if (config.TELEGRAM_BOT_TOKEN) {
 /𝚊𝚕𝚒𝚟𝚎 - 𝙲𝚑𝚎𝚌𝚔 𝚒𝚏 𝚋𝚘𝚝 𝚒𝚜 𝚊𝚕𝚒𝚟𝚎
 
 🚀 *𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙻𝚒𝚗𝚔𝚜:*
-• 𝙶𝚒𝚝𝙷𝚞𝚋: https://github.com/ARNOLDT20/OCTO MD
+• 𝙶𝚒𝚝𝙷𝚞𝚋: https://github.com/ARNOLDT20/viper2
 • 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝙲𝚑𝚊𝚗𝚗𝚎𝚕: ${config.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbAjawl9MF8vQQa0ZT32'}
 • 𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙶𝚛𝚘𝚞𝚙: https://chat.whatsapp.com/IdGNaKt80DEBqirc2ek4ks
 
@@ -1359,17 +1359,17 @@ if (config.TELEGRAM_BOT_TOKEN) {
 
         const buttons = Markup.inlineKeyboard([
             [
-                Markup.button.url('📢 𝙲𝚑𝚊𝚗𝚗𝚎𝚕', 'https://t.me/sila_tech2'),
+                Markup.button.url('📢 𝙲𝚑𝚊𝚗𝚗𝚎𝚕', 'https://t.me/t20classictech'),
                 Markup.button.url('👥 𝙶𝚛𝚘𝚞𝚙', 'https://t.me/255627417402')
             ],
             [
-                Markup.button.url('⭐ 𝙶𝚒𝚝𝙷𝚞𝚋', 'https://github.com/ARNOLDT20/OCTO-MD'),
+                Markup.button.url('⭐ 𝙶𝚒𝚝𝙷𝚞𝚋', 'https://github.com/ARNOLDT20/viper2'),
                 Markup.button.url('📱 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙', config.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbAjawl9MF8vQQa0ZT32')
             ]
         ]);
 
         ctx.replyWithPhoto(
-            { url: config.IMAGE_PATH || 'https://files.catbox.moe/natk49.jpg' },
+            { url: config.IMAGE_PATH || 'https://files.catbox.moe/ejpcue.png' },
             {
                 caption: welcomeMessage,
                 parse_mode: 'Markdown',
@@ -1383,7 +1383,7 @@ if (config.TELEGRAM_BOT_TOKEN) {
     bot.command('pair', async (ctx) => {
         const args = ctx.message.text.split(' ');
         if (args.length < 2) {
-            return ctx.reply('❌ *𝚄𝚜𝚊𝚐𝚎:* /𝚙𝚊𝚒𝚛 <𝚗𝚞𝚖𝚋𝚎𝚛>\n*𝙴𝚡𝚊𝚖𝚙𝚕𝚎:* /𝚙𝚊𝚒𝚛 255789661031', { parse_mode: 'Markdown' });
+            return ctx.reply('❌ *𝚄𝚜𝚊𝚐𝚎:* /𝚙𝚊𝚒𝚛 <𝚗𝚞𝚖𝚋𝚎𝚛>\n*𝙴𝚡𝚊𝚖𝚙𝚕𝚎:* /𝚙𝚊𝚒𝚛 255627417402', { parse_mode: 'Markdown' });
         }
 
         const number = args[1];

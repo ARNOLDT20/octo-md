@@ -3,20 +3,63 @@ module.exports = {
     function: async (ctx) => {
         try {
             const { Markup } = require('telegraf');
-            
-            const menuMessage = `📜 *𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝙱𝙾𝚃 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 𝙼𝙴𝙽𝚄* 📜\n\n🤖 *𝙱𝙰𝚂𝙸𝙲 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂:*\n• /𝚜𝚝𝚊𝚛𝚝 - 𝚂𝚝𝚊𝚛𝚝 𝚝𝚑𝚎 𝚋𝚘𝚝\n• /𝚙𝚊𝚒𝚛 <𝚗𝚞𝚖𝚋𝚎𝚛> - 𝙿𝚊𝚒𝚛 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝\n• /𝚘𝚠𝚗𝚎𝚛 - 𝙲𝚘𝚗𝚝𝚊𝚌𝚝 𝚘𝚠𝚗𝚎𝚛\n• /𝚖𝚎𝚗𝚞 - 𝚂𝚑𝚘𝚠 𝚝𝚑𝚒𝚜 𝚖𝚎𝚗𝚞\n• /𝚙𝚒𝚗𝚐 - 𝙲𝚑𝚎𝚌𝚔 𝚋𝚘𝚝 𝚜𝚝𝚊𝚝𝚞𝚜\n• /𝚊𝚕𝚒𝚟𝚎 - 𝙲𝚑𝚎𝚌𝚔 𝚒𝚏 𝚋𝚘𝚝 𝚒𝚜 𝚊𝚕𝚒𝚟𝚎\n\n🔧 *𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂:*\n• .𝚖𝚎𝚗𝚞 - 𝚂𝚑𝚘𝚠 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝 𝚖𝚎𝚗𝚞\n• .𝚜𝚝𝚊𝚝𝚞𝚜 - 𝙲𝚑𝚎𝚌𝚔 𝚋𝚘𝚝 𝚜𝚝𝚊𝚝𝚞𝚜\n• .𝚛𝚎𝚜𝚝𝚊𝚛𝚝 - 𝚁𝚎𝚜𝚝𝚊𝚛𝚝 𝚋𝚘𝚝\n• .𝚋𝚛𝚘𝚊𝚍𝚌𝚊𝚜𝚝 - 𝙱𝚛𝚘𝚊𝚍𝚌𝚊𝚜𝚝 𝚖𝚎𝚜𝚜𝚊𝚐𝚎\n\n🛡️ *𝚂𝙴𝙲𝚄𝚁𝙸𝚃𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂:*\n• .𝚊𝚗𝚝𝚒𝚕𝚒𝚗𝚔 [𝚘𝚗/𝚘𝚏𝚏] - 𝙲𝚘𝚗𝚝𝚛𝚘𝚕 𝚊𝚗𝚝𝚒𝚕𝚒𝚗𝚔\n• .𝚊𝚗𝚝𝚒𝚌𝚊𝚕𝚕 [𝚘𝚗/𝚘𝚏𝚏] - 𝙲𝚘𝚗𝚝𝚛𝚘𝚕 𝚊𝚗𝚝𝚒𝚌𝚊𝚕𝚕\n• .𝚊𝚗𝚝𝚒𝚍𝚎𝚕𝚎𝚝𝚎 - 𝚃𝚘𝚐𝚐𝚕𝚎 𝚊𝚗𝚝𝚒𝚍𝚎𝚕𝚎𝚝𝚎\n\n🎵 *𝙼𝙴𝙳𝙸𝙰 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂:*\n• .𝚙𝚕𝚊𝚢 <𝚜𝚘𝚗𝚐> - 𝙿𝚕𝚊𝚢 𝚖𝚞𝚜𝚒𝚌\n• .𝚢𝚝𝚜 <𝚚𝚞𝚎𝚛𝚢> - 𝚂𝚎𝚊𝚛𝚌𝚑 𝚈𝚘𝚞𝚃𝚞𝚋𝚎\n• .𝚒𝚗𝚜𝚝𝚊 <𝚞𝚛𝚕> - 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙸𝚗𝚜𝚝𝚊𝚐𝚛𝚊𝚖\n• .𝚏𝚋 <𝚞𝚛𝚕> - 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙵𝚊𝚌𝚎𝚋𝚘𝚘𝚔\n\n🧠 *𝙰𝙸 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂:*\n• .𝚊𝚒 <𝚚𝚞𝚎𝚜𝚝𝚒𝚘𝚗> - 𝙰𝚜𝚔 𝙰𝙸\n• .𝚐𝚙𝚝 <𝚙𝚛𝚘𝚖𝚙𝚝> - 𝚄𝚜𝚎 𝙶𝙿𝚃\n• .𝚐𝚎𝚖𝚒𝚗𝚒 <𝚚𝚞𝚎𝚛𝚢> - 𝚄𝚜𝚎 𝙶𝚎𝚖𝚒𝚗𝚒 𝙰𝙸\n• .𝚍𝚊𝚕𝚕𝚎 <𝚙𝚛𝚘𝚖𝚙𝚝> - 𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚎 𝙸𝚖𝚊𝚐𝚎\n\n📊 *𝚂𝚃𝙰𝚃𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂:*\n• .𝚜𝚝𝚊𝚝𝚜 - 𝚂𝚑𝚘𝚠 𝚋𝚘𝚝 𝚜𝚝𝚊𝚝𝚒𝚜𝚝𝚒𝚌𝚜\n• .𝚙𝚒𝚗𝚐 - 𝙲𝚑𝚎𝚌𝚔 𝚋𝚘𝚝 𝚕𝚊𝚝𝚎𝚗𝚌𝚢\n• .𝚜𝚙𝚎𝚎𝚍 - 𝚃𝚎𝚜𝚝 𝚋𝚘𝚝 𝚜𝚙𝚎𝚎𝚍\n\n🔗 *𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙻𝙸𝙽𝙺𝚂:*\n• 𝙶𝚒𝚝𝙷𝚞𝚋: https://github.com/Sila-Md/SILA-MD\n• 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙: https://whatsapp.com/channel/0029VbBG4gfISTkCpKxyMH02\n• 𝚃𝚎𝚕𝚎𝚐𝚛𝚊𝚖: @sila_tech2\n\n> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡`;
-            
+
+            const menuMessage = `📜 *𝐎𝐂𝐓𝐎-𝐌𝐃 𝐁𝐎𝐓 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 𝐌𝐄𝐍𝐔* 📜
+
+🤖 *𝐁𝐀𝐒𝐈𝐂 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒:*
+• /start - Start the bot
+• /pair <number> - Pair WhatsApp bot
+• /owner - Contact owner
+• /menu - Show this menu
+• /ping - Check bot status
+• /alive - Check if bot is alive
+
+🔧 *𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐁𝐎𝐓 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒:*
+• .menu - Show WhatsApp bot menu
+• .status - Check bot status
+• .restart - Restart bot
+• .broadcast - Broadcast message
+
+🛡️ *𝐒𝐄𝐂𝐔𝐑𝐈𝐓𝐘 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒:*
+• .antilink [on/off]
+• .anticall [on/off]
+• .antidelete
+
+🎵 *𝐌𝐄𝐃𝐈𝐀 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒:*
+• .play <song>
+• .yts <query>
+• .insta <url>
+• .fb <url>
+
+🧠 *𝐀𝐈 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒:*
+• .ai <question>
+• .gpt <prompt>
+• .gemini <query>
+• .dalle <prompt>
+
+📊 *𝐒𝐓𝐀𝐓𝐒 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒:*
+• .stats
+• .ping
+• .speed
+
+🔗 *𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐋𝐈𝐍𝐊𝐒:*
+• GitHub: https://github.com/octo-md/OCTO-MD
+• WhatsApp Channel: https://whatsapp.com/channel/0029VafU76r3bbV9nK4nV73G
+• Telegram: @octo_md
+
+> © 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐎𝐜𝐭𝐨 𝐓𝐞𝐜𝐡`;
+
             const buttons = Markup.inlineKeyboard([
                 [
-                    Markup.button.url('📢 𝙲𝚑𝚊𝚗𝚗𝚎𝚕', 'https://t.me/sila_tech2'),
-                    Markup.button.url('👥 𝙶𝚛𝚘𝚞𝚙', 'https://t.me/sila_md')
+                    Markup.button.url('📢 Channel', 'https://t.me/octo_md'),
+                    Markup.button.url('👥 Group', 'https://t.me/octo_md_support')
                 ],
                 [
-                    Markup.button.url('⭐ 𝙶𝚒𝚝𝙷𝚞𝚋', 'https://github.com/Sila-Md/SILA-MD'),
-                    Markup.button.url('🤖 𝚃𝚛𝚢 𝙱𝚘𝚝', 'https://t.me/momy_kidy_bot')
+                    Markup.button.url('⭐ GitHub', 'https://github.com/octo-md/OCTO-MD'),
+                    Markup.button.url('🤖 Try Bot', 'https://t.me/octo_md_bot')
                 ]
             ]);
-            
+
             await ctx.replyWithPhoto(
                 { url: 'https://files.catbox.moe/natk49.jpg' },
                 {
@@ -26,7 +69,17 @@ module.exports = {
                 }
             );
         } catch (error) {
-            await ctx.reply(`📜 *𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝙱𝙾𝚃 𝙼𝙴𝙽𝚄* 📜\n\n🤖 *𝙱𝙰𝚂𝙸𝙲 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂:*\n• /𝚜𝚝𝚊𝚛𝚝\n• /𝚙𝚊𝚒𝚛 <𝚗𝚞𝚖𝚋𝚎𝚛>\n• /𝚘𝚠𝚗𝚎𝚛\n• /𝚖𝚎𝚗𝚞\n• /𝚙𝚒𝚗𝚐\n• /𝚊𝚕𝚒𝚟𝚎\n\n> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡`, { parse_mode: 'Markdown' });
+            await ctx.reply(`📜 *𝐎𝐂𝐓𝐎-𝐌𝐃 𝐁𝐎𝐓 𝐌𝐄𝐍𝐔* 📜
+
+🤖 *Basic Commands:*
+• /start
+• /pair <number>
+• /owner
+• /menu
+• /ping
+• /alive
+
+> © 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐎𝐜𝐭𝐨 𝐓𝐞𝐜𝐡`, { parse_mode: 'Markdown' });
         }
     }
 };
