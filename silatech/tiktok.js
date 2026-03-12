@@ -10,80 +10,80 @@ cmd({
     category: "download",
     react: "🎵"
 },
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply, myquoted }) => {
-    try {
-        // Check if TikTok link is provided
-        if (!q) {
-            return reply(`❌ *Please provide a TikTok video link*\n\nUsage: ${config.PREFIX}tiktok *TikTok URL*`);
-        }
+    async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply, myquoted }) => {
+        try {
+            // Check if TikTok link is provided
+            if (!q) {
+                return reply(`❌ *Please provide a TikTok video link*\n\nUsage: ${config.PREFIX}tiktok *TikTok URL*`);
+            }
 
-        // Validate URL
-        if (!q.includes('tiktok.com')) {
-            return reply('❌ *Please provide a valid TikTok video link*');
-        }
+            // Validate URL
+            if (!q.includes('tiktok.com')) {
+                return reply('❌ *Please provide a valid TikTok video link*');
+            }
 
-        // Send typing indicator
-        await conn.sendPresenceUpdate('composing', from);
-        
-        // Random reaction for style
-        const reactions = ['🎵', '🎬', '⬇️', '📱', '🎥'];
-        const randomReact = reactions[Math.floor(Math.random() * reactions.length)];
-        
-        await conn.sendMessage(from, {
-            react: { text: randomReact, key: mek.key }
-        });
+            // Send typing indicator
+            await conn.sendPresenceUpdate('composing', from);
 
-        // Clean URL
-        const tiktokUrl = q.trim();
+            // Random reaction for style
+            const reactions = ['🎵', '🎬', '⬇️', '📱', '🎥'];
+            const randomReact = reactions[Math.floor(Math.random() * reactions.length)];
 
-        // API request
-        const apiUrl = `https://api.bk9.dev/download/tiktok3?url=${encodeURIComponent(tiktokUrl)}`;
-        const response = await axios.get(apiUrl);
-        
-        if (!response.data || !response.data.status) {
-            return reply(`❌ *Failed to fetch video*\nReason: ${response.data?.message || 'Invalid URL or video not found'}`);
-        }
+            await conn.sendMessage(from, {
+                react: { text: randomReact, key: mek.key }
+            });
 
-        const tiktokData = response.data.BK9;
-        
-        // Get the best quality video (HD No Watermark)
-        const videoFormat = tiktokData.formats.find(f => f.quality === 'hd_no_watermark') || 
-                           tiktokData.formats.find(f => f.quality === 'no_watermark') ||
-                           tiktokData.formats[0];
-        
-        const videoUrl = videoFormat.url;
-        const quality = videoFormat.quality === 'hd_no_watermark' ? 'HD' : 'SD';
-        const title = tiktokData.title || 'TikTok Video';
-        const author = tiktokData.author || 'Unknown';
+            // Clean URL
+            const tiktokUrl = q.trim();
 
-        // Send video with styled caption
-        await conn.sendMessage(from, { 
-            video: { url: videoUrl },
-            caption: `╭━━【 𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝙱𝙾𝚃 】━━━━━━━━╮
+            // API request
+            const apiUrl = `https://api.bk9.dev/download/tiktok3?url=${encodeURIComponent(tiktokUrl)}`;
+            const response = await axios.get(apiUrl);
+
+            if (!response.data || !response.data.status) {
+                return reply(`❌ *Failed to fetch video*\nReason: ${response.data?.message || 'Invalid URL or video not found'}`);
+            }
+
+            const tiktokData = response.data.BK9;
+
+            // Get the best quality video (HD No Watermark)
+            const videoFormat = tiktokData.formats.find(f => f.quality === 'hd_no_watermark') ||
+                tiktokData.formats.find(f => f.quality === 'no_watermark') ||
+                tiktokData.formats[0];
+
+            const videoUrl = videoFormat.url;
+            const quality = videoFormat.quality === 'hd_no_watermark' ? 'HD' : 'SD';
+            const title = tiktokData.title || 'TikTok Video';
+            const author = tiktokData.author || 'Unknown';
+
+            // Send video with styled caption
+            await conn.sendMessage(from, {
+                video: { url: videoUrl },
+                caption: `╭━━【 OCTO MD 𝙱𝙾𝚃 】━━━━━━━━╮
 │ *tiktok video*
 │ *quality:* ${quality} (no watermark)
 │ *author:* @${author}
 │ *title:* ${title.substring(0, 50)}${title.length > 50 ? '...' : ''}
 ╰━━━━━━━━━━━━━━━━━━━━╯
 
-${config.BOT_FOOTER || '> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡'}`
-        }, { quoted: myquoted });
+${config.BOT_FOOTER || '> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐁𝐥𝐚𝐳𝐞 𝐓𝐞𝐜𝐡'}`
+            }, { quoted: myquoted });
 
-        // Final reaction
-        await conn.sendMessage(from, {
-            react: { text: "✅", key: mek.key }
-        });
+            // Final reaction
+            await conn.sendMessage(from, {
+                react: { text: "✅", key: mek.key }
+            });
 
-    } catch (e) {
-        console.error('TikTok Command Error:', e);
-        
-        let errorMessage = e.message;
-        if (e.response?.status === 404) {
-            errorMessage = "Video not found. Make sure the URL is correct.";
-        } else if (e.code === 'ECONNREFUSED') {
-            errorMessage = "Connection to API server failed.";
+        } catch (e) {
+            console.error('TikTok Command Error:', e);
+
+            let errorMessage = e.message;
+            if (e.response?.status === 404) {
+                errorMessage = "Video not found. Make sure the URL is correct.";
+            } else if (e.code === 'ECONNREFUSED') {
+                errorMessage = "Connection to API server failed.";
+            }
+
+            reply(`❌ *Failed to download video*\nError: ${errorMessage}`);
         }
-
-        reply(`❌ *Failed to download video*\nError: ${errorMessage}`);
-    }
-});
+    });

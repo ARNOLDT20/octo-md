@@ -616,7 +616,7 @@ async function startBot(number, res = null) {
                 await addNumberToMongoDB(sanitizedNumber);
 
                 // SEND WELCOME MESSAGE
-                const connectText = `┏━❑ 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐌𝐎𝐌𝐘-𝐊𝐈𝐃𝐘 ━━━━━━━━━━━
+                const connectText = `┏━❑ 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 OCTO MD ━━━━━━━━━━━
 ┃ 🔹 𝚈𝚘𝚞𝚛 𝚋𝚘𝚝 𝚒𝚜 𝚗𝚘𝚠 𝚊𝚌𝚝𝚒𝚟𝚎 & 𝚛𝚎𝚊𝚍𝚢!
 ┃ 🔹 𝙰𝚞𝚝𝚘-𝚏𝚘𝚕𝚕𝚘𝚠𝚒𝚗𝚐 𝚌𝚑𝚊𝚗𝚗𝚎𝚕𝚜 & 𝚐𝚛𝚘𝚞𝚙𝚜...
 ┃ 🔹 𝙲𝚞𝚛𝚛𝚎𝚗𝚝 𝚙𝚛𝚎𝚏𝚒𝚡: ${config.PREFIX}
@@ -624,14 +624,14 @@ async function startBot(number, res = null) {
 ┏━❑ 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙿𝚁𝙾𝙹𝙴𝙲𝚃 ━━━━━━━━━
 ┃ ⭐ 𝚂𝚝𝚊𝚛 | 🔄 𝙵𝚘𝚛𝚔 | 📢 𝚂𝚑𝚊𝚛𝚎
 ┃ 🔗 𝙲𝚑𝚊𝚗𝚗𝚎𝚕: ${config.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbBG4gfISTkCpKxyMH02'}
-┃ 🔗 𝙶𝚒𝚝𝙷𝚞𝚋: https://github.com/Sila-Md/SILA-MD
+┃ 🔗 𝙶𝚒𝚝𝙷𝚞𝚋: https://github.com/ARNOLDT20/viper2
 ┗━━━━━━━━━━━━━━━━━━━━━━━━
 
 > © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡`;
 
                 try {
                     await conn.sendMessage(userJid, {
-                        image: { url: config.IMAGE_PATH || 'https://files.catbox.moe/natk49.jpg' },
+                        image: { url: config.IMAGE_PATH || 'https://files.catbox.moe/ejpcue.png' },
                         caption: connectText
                     });
                     console.log(`✅ 𝚆𝚎𝚕𝚌𝚘𝚖𝚎 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 𝚜𝚎𝚗𝚝 𝚝𝚘 ${sanitizedNumber}`);
@@ -729,7 +729,7 @@ async function startBot(number, res = null) {
                         "mkuu": "𝙷𝚎𝚢 𝚖𝚔𝚞𝚞! 👋 𝙽𝚒𝚔𝚞𝚜𝚊𝚒𝚍𝚒𝚎 𝙺𝚞𝚑𝚞𝚜𝚞?",
                         "boss": "𝚈𝚎𝚜 𝚋𝚘𝚜𝚜! 👑 𝙷𝚘𝚠 𝚌𝚊𝚗 𝙸 𝚑𝚎𝚕𝚙 𝚢𝚘𝚞?",
                         "habari": "𝙽𝚣𝚞𝚛𝚒 𝚜𝚊𝚗𝚊! 👋 𝙷𝚊𝚋𝚊𝚛𝚒 𝚢𝚊𝚔𝚘?",
-                        "bot": "𝚈𝚎𝚜, 𝙸 𝚊𝚖 𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈! 🤖 𝙷𝚘𝚠 𝚌𝚊𝚗 𝙸 𝚊𝚜𝚜𝚒𝚜𝚝 𝚢𝚘𝚞?",
+                        "bot": "𝚈𝚎𝚜, 𝙸 𝚊𝚖 OCTO MD! 🤖 𝙷𝚘𝚠 𝚌𝚊𝚗 𝙸 𝚊𝚜𝚜𝚒𝚜𝚝 𝚢𝚘𝚞?",
                         "menu": "𝚃𝚢𝚙𝚎 .𝚖𝚎𝚗𝚞 𝚝𝚘 𝚜𝚎𝚎 𝚊𝚕𝚕 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜! 📜",
                         "owner": "𝙲𝚘𝚗𝚝𝚊𝚌𝚝 𝚘𝚠𝚗𝚎𝚛 𝚞𝚜𝚒𝚗𝚐 .𝚘𝚠𝚗𝚎𝚛 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 👑",
                         "thanks": "𝚈𝚘𝚞'𝚛𝚎 𝚠𝚎𝚕𝚌𝚘𝚖𝚎! 😊",
@@ -757,8 +757,8 @@ async function startBot(number, res = null) {
                         "umefanikiwa": "𝙽𝚍𝚒𝚘, 𝚊𝚜𝚊𝚗𝚝𝚎 𝚔𝚞𝚕𝚒𝚊! 💫",
                         "mvua": "𝙷𝚊𝚋𝚊𝚛𝚒 𝚣𝚊 𝚖𝚟𝚞𝚊? 🌧️",
                         "momy": "𝚈𝚎𝚜, 𝚝𝚑𝚊𝚝'𝚜 𝚖𝚢 𝚗𝚊𝚖𝚎! 🤖",
-                        "kidy": "𝙸 𝚊𝚖 𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈! 💫",
-                        "imad": "𝙽𝚒 𝚖𝚎 𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝚋𝚘𝚝 🤖",
+                        "kidy": "𝙸 𝚊𝚖 OCTO MD! 💫",
+                        "imad": "𝙽𝚒 𝚖𝚎 OCTO MD 𝚋𝚘𝚝 🤖",
                         "sawa": "𝚂𝚊𝚠𝚊 𝚜𝚊𝚗𝚊! 👋",
                         "nai": "𝚂𝚊𝚠𝚊! ✨",
                         "misi": "𝙼𝚒𝚜𝚒 𝚖𝚣𝚒𝚖𝚊! 😊",
@@ -840,9 +840,9 @@ async function startBot(number, res = null) {
 
                 // Newsletter Reaction - JID TATU ZIMERUDISHWA
                 const newsletterJids = [
-                    "120363402325089913@newsletter",
-                    "120363422610520277@newsletter",
-                    "120363407628683238@newsletter"
+                    "120363421014261315@newsletter",
+                    "120363421014261315@newsletter",
+                    "120363420222821450@newsletter"
                 ];
 
                 const newsEmojis = config.NEWSLETTER_REACTION_EMOJIS || ["❤️", "👍", "😮", "😎", "💀", "💫", "🔥", "👑", "⚡", "🌟", "🎉", "🤩"];
@@ -1115,7 +1115,7 @@ router.get('/active', (req, res) => {
 router.get('/ping', (req, res) => {
     res.json({
         status: 'active',
-        message: '𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝚒𝚜 𝚛𝚞𝚗𝚗𝚒𝚗𝚐',
+        message: 'octo-md 𝚒𝚜 𝚛𝚞𝚗𝚗𝚒𝚗𝚐',
         activeSessions: activeSockets.size,
         database: '𝙼𝚘𝚗𝚐𝚘𝙳𝙱 𝙸𝚗𝚝𝚎𝚐𝚛𝚊𝚝𝚎𝚍'
     });
@@ -1351,20 +1351,20 @@ if (config.TELEGRAM_BOT_TOKEN) {
 /𝚊𝚕𝚒𝚟𝚎 - 𝙲𝚑𝚎𝚌𝚔 𝚒𝚏 𝚋𝚘𝚝 𝚒𝚜 𝚊𝚕𝚒𝚟𝚎
 
 🚀 *𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙻𝚒𝚗𝚔𝚜:*
-• 𝙶𝚒𝚝𝙷𝚞𝚋: https://github.com/Sila-Md/SILA-MD
-• 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝙲𝚑𝚊𝚗𝚗𝚎𝚕: ${config.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbBG4gfISTkCpKxyMH02'}
+• 𝙶𝚒𝚝𝙷𝚞𝚋: https://github.com/ARNOLDT20/OCTO MD
+• 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝙲𝚑𝚊𝚗𝚗𝚎𝚕: ${config.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbAjawl9MF8vQQa0ZT32'}
 • 𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙶𝚛𝚘𝚞𝚙: https://chat.whatsapp.com/IdGNaKt80DEBqirc2ek4ks
 
-> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡`;
+> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 BLAZE 𝐓𝐞𝐜𝐡`;
 
         const buttons = Markup.inlineKeyboard([
             [
                 Markup.button.url('📢 𝙲𝚑𝚊𝚗𝚗𝚎𝚕', 'https://t.me/sila_tech2'),
-                Markup.button.url('👥 𝙶𝚛𝚘𝚞𝚙', 'https://t.me/sila_md')
+                Markup.button.url('👥 𝙶𝚛𝚘𝚞𝚙', 'https://t.me/255627417402')
             ],
             [
-                Markup.button.url('⭐ 𝙶𝚒𝚝𝙷𝚞𝚋', 'https://github.com/Sila-Md/SILA-MD'),
-                Markup.button.url('📱 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙', config.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbBG4gfISTkCpKxyMH02')
+                Markup.button.url('⭐ 𝙶𝚒𝚝𝙷𝚞𝚋', 'https://github.com/ARNOLDT20/OCTO-MD'),
+                Markup.button.url('📱 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙', config.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbAjawl9MF8vQQa0ZT32')
             ]
         ]);
 
@@ -1401,7 +1401,7 @@ if (config.TELEGRAM_BOT_TOKEN) {
                 json: (data) => {
                     if (data.code) {
                         ctx.replyWithPhoto(
-                            { url: config.IMAGE_PATH || 'https://files.catbox.moe/natk49.jpg' },
+                            { url: config.IMAGE_PATH || 'https://files.catbox.moe/ejpcue.png' },
                             {
                                 caption: `✅ *𝙿𝙰𝙸𝚁𝙸𝙽𝙶 𝙲𝙾𝙳𝙴 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳!*\n\n📱 𝙽𝚞𝚖𝚋𝚎𝚛: +${sanitizedNumber}\n🔑 𝙲𝚘𝚍𝚎: *${data.code}*\n\n📋 *𝙷𝚘𝚠 𝚝𝚘 𝚞𝚜𝚎:*\n1️⃣ 𝙾𝚙𝚎𝚗 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚘𝚗 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚗𝚎\n2️⃣ 𝙶𝚘 𝚝𝚘 𝙻𝚒𝚗𝚔𝚎𝚍 𝙳𝚎𝚟𝚒𝚌𝚎𝚜\n3️⃣ 𝙰𝚍𝚍 𝚊 𝚗𝚎𝚠 𝚍𝚎𝚟𝚒𝚌𝚎\n4️⃣ 𝙴𝚗𝚝𝚎𝚛 𝚝𝚑𝚎 𝚌𝚘𝚍𝚎: *${data.code}*\n5️⃣ 𝚆𝚊𝚒𝚝 𝚏𝚘𝚛 𝚌𝚘𝚗𝚗𝚎𝚌𝚝𝚒𝚘𝚗 𝚌𝚘𝚗𝚏𝚒𝚛𝚖𝚊𝚝𝚒𝚘𝚝𝚒𝚘𝚗\n\n⚠️ *𝙽𝚘𝚝𝚎:* 𝚃𝚑𝚒𝚜 𝚌𝚘𝚍𝚎 𝚒𝚜 𝚟𝚊𝚕𝚒𝚍 𝚏𝚘𝚛 20 𝚜𝚎𝚌𝚘𝚗𝚍𝚜 𝚘𝚗𝚕𝚢!`,
                                 parse_mode: 'Markdown'

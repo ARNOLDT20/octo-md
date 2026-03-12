@@ -17,7 +17,7 @@ cmd({
         // Get group metadata
         const groupData = await conn.groupMetadata(from);
         const members = groupData.participants;
-        
+
         // Check if sender is admin
         const senderParticipant = members.find(p => p.id === sender);
         if (!senderParticipant || (senderParticipant.admin !== "admin" && senderParticipant.admin !== "superadmin")) {
@@ -32,14 +32,14 @@ cmd({
 
         // Unmute the group
         await conn.groupSettingUpdate(from, 'not_announcement');
-        
+
         const successMsg = `╭━━【 🔊 𝚄𝙽𝙼𝚄𝚃𝙴 】━━━╮
 │ ✅ 𝙶𝚛𝚘𝚞𝚙 𝚞𝚗𝚖𝚞𝚝𝚎𝚍 𝚜𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢
 │ 👥 𝙼𝚎𝚖𝚋𝚎𝚛𝚜 𝚌𝚊𝚗 𝚗𝚘𝚠 𝚜𝚎𝚗𝚍 𝚖𝚎𝚜𝚜𝚊𝚐𝚎𝚜
 │ 📢 𝙰𝚕𝚕 𝚞𝚜𝚎𝚛𝚜 𝚊𝚛𝚎 𝚗𝚘𝚠 𝚊𝚕𝚕𝚘𝚠𝚎𝚍 𝚝𝚘 𝚝𝚊𝚕𝚔
 ╰━━━━━━━━━━━━━━━━━━━╯
 
-> 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡`;
+> 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐁𝐥𝐚𝐳𝐞 𝐓𝐞𝐜𝐡`;
 
         await conn.sendMessage(from, { text: successMsg });
         await m.react("✅");

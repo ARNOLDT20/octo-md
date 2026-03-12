@@ -10,75 +10,75 @@ cmd({
     category: "tools",
     react: "👁️"
 },
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply, myquoted }) => {
-    try {
-        // Check if there's a quoted message
-        if (!mek.message?.extendedTextMessage?.contextInfo?.quotedMessage) {
-            return reply(`❌ *Reply to a view-once image or video*\n\nUsage: ${config.PREFIX}vv *reply to view-once media*`);
-        }
+    async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply, myquoted }) => {
+        try {
+            // Check if there's a quoted message
+            if (!mek.message?.extendedTextMessage?.contextInfo?.quotedMessage) {
+                return reply(`❌ *Reply to a view-once image or video*\n\nUsage: ${config.PREFIX}vv *reply to view-once media*`);
+            }
 
-        const quotedMsg = mek.message.extendedTextMessage.contextInfo.quotedMessage;
-        
-        // Handle view-once wrapper
-        const viewOnceMsg = quotedMsg.viewOnceMessageV2 || quotedMsg.viewOnceMessage || null;
-        
-        const mediaMessage = viewOnceMsg?.message?.imageMessage ||
-            viewOnceMsg?.message?.videoMessage ||
-            quotedMsg.imageMessage ||
-            quotedMsg.videoMessage;
+            const quotedMsg = mek.message.extendedTextMessage.contextInfo.quotedMessage;
 
-        if (!mediaMessage) {
-            return reply('❌ *Unsupported message type*\n\nPlease reply to a view-once image or video');
-        }
+            // Handle view-once wrapper
+            const viewOnceMsg = quotedMsg.viewOnceMessageV2 || quotedMsg.viewOnceMessage || null;
 
-        // Check if it's actually a view-once media
-        if (!mediaMessage.viewOnce) {
-            return reply('❌ *This is not a view-once media*');
-        }
+            const mediaMessage = viewOnceMsg?.message?.imageMessage ||
+                viewOnceMsg?.message?.videoMessage ||
+                quotedMsg.imageMessage ||
+                quotedMsg.videoMessage;
 
-        const isImage = !!mediaMessage.imageMessage || mediaMessage.mimetype?.startsWith("image");
-        const isVideo = !!mediaMessage.videoMessage || mediaMessage.mimetype?.startsWith("video");
+            if (!mediaMessage) {
+                return reply('❌ *Unsupported message type*\n\nPlease reply to a view-once image or video');
+            }
 
-        // Random reaction for style
-        const reactions = ['👁️', '🔓', '📸', '🎥', '✨'];
-        const randomReact = reactions[Math.floor(Math.random() * reactions.length)];
-        
-        await conn.sendMessage(from, {
-            react: { text: randomReact, key: mek.key }
-        });
+            // Check if it's actually a view-once media
+            if (!mediaMessage.viewOnce) {
+                return reply('❌ *This is not a view-once media*');
+            }
 
-        // Download the media
-        const stream = await downloadContentFromMessage(
-            mediaMessage,
-            isImage ? "image" : "video"
-        );
+            const isImage = !!mediaMessage.imageMessage || mediaMessage.mimetype?.startsWith("image");
+            const isVideo = !!mediaMessage.videoMessage || mediaMessage.mimetype?.startsWith("video");
 
-        let buffer = Buffer.from([]);
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk]);
-        }
+            // Random reaction for style
+            const reactions = ['👁️', '🔓', '📸', '🎥', '✨'];
+            const randomReact = reactions[Math.floor(Math.random() * reactions.length)];
 
-        // Send the revealed media with styled caption
-        const mediaType = isImage ? "image" : "video";
-        const caption = `╭━━【 𝙼𝙾𝙼𝚈-𝙺𝙸𝙳𝚈 𝙱𝙾𝚃 】━━━━━━━━╮
+            await conn.sendMessage(from, {
+                react: { text: randomReact, key: mek.key }
+            });
+
+            // Download the media
+            const stream = await downloadContentFromMessage(
+                mediaMessage,
+                isImage ? "image" : "video"
+            );
+
+            let buffer = Buffer.from([]);
+            for await (const chunk of stream) {
+                buffer = Buffer.concat([buffer, chunk]);
+            }
+
+            // Send the revealed media with styled caption
+            const mediaType = isImage ? "image" : "video";
+            const caption = `╭━━【 OCTO MD BOT 】━━━━━━━━╮
 │ *view-once revealed*
 │ *type:* ${isImage ? '🖼️ image' : '🎥 video'}
 ╰━━━━━━━━━━━━━━━━━━━━╯
 
-${config.BOT_FOOTER || '> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡'}`;
+${config.BOT_FOOTER || '> © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐁𝐥𝐚𝐳𝐞 𝐓𝐞𝐜𝐡'}`;
 
-        await conn.sendMessage(from, {
-            [mediaType]: buffer,
-            caption: caption,
-            contextInfo: {
-                mentionedJid: [sender],
-                forwardingScore: 999,
-                isForwarded: true
-            }
-        }, { quoted: myquoted });
+            await conn.sendMessage(from, {
+                [mediaType]: buffer,
+                caption: caption,
+                contextInfo: {
+                    mentionedJid: [sender],
+                    forwardingScore: 999,
+                    isForwarded: true
+                }
+            }, { quoted: myquoted });
 
-    } catch (e) {
-        console.error('VV Command Error:', e);
-        reply(`❌ *Failed to reveal view-once media*\nError: ${e.message}`);
-    }
-});
+        } catch (e) {
+            console.error('VV Command Error:', e);
+            reply(`❌ *Failed to reveal view-once media*\nError: ${e.message}`);
+        }
+    });

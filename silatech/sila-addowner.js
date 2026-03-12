@@ -4,17 +4,17 @@ const path = require('path');
 
 // Define combined fakevCard 
 const fakevCard = {
-  key: {
-    fromMe: false,
-    participant: "0@s.whatsapp.net",
-    remoteJid: "status@broadcast"
-  },
-  message: {
-    contactMessage: {
-      displayName: "© 𝐒𝐈𝐋𝐀-𝐌𝐃",
-      vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:𝐒𝐈𝐋𝐀 𝐌𝐃 𝐁𝐎𝐓\nORG:𝐒𝐈𝐋𝐀-𝐌𝐃;\nTEL;type=CELL;type=VOICE;waid=255789661031:+255789661031\nEND:VCARD`
+    key: {
+        fromMe: false,
+        participant: "0@s.whatsapp.net",
+        remoteJid: "status@broadcast"
+    },
+    message: {
+        contactMessage: {
+            displayName: "© OCTO MD",
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:OCTO MD BOT\nORG:OCTO MD;\nTEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\nEND:VCARD`
+        }
     }
-  }
 };
 
 const getContextInfo = (m) => {
@@ -23,15 +23,15 @@ const getContextInfo = (m) => {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363402325089913@newsletter',
-            newsletterName: '© 𝐒𝐈𝐋𝐀 𝐌𝐃',
+            newsletterJid: '120363421014261315@newsletter',
+            newsletterName: 'OCTO MD',
             serverMessageId: 143,
         },
     };
 };
 
 // Creator's number
-const CREATOR = '255789661031@s.whatsapp.net';
+const CREATOR = '255627417402@s.whatsapp.net';
 
 // Path to store owners
 const OWNERS_FILE = path.join(__dirname, '../data', 'owners.json');
@@ -87,69 +87,67 @@ const normalizeJid = (num) => {
 
 cmd({
     pattern: "addowner",
-    alias: ["silaowner", "setowner"],
+    alias: ["octoowner", "setowner"],
     react: "👑",
     desc: "Add bot owner",
     category: "owner",
     filename: __filename
 },
-async(conn, mek, m, {from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-    // Check if sender is owner or creator
-    if (!isOwner(sender)) {
-        return await conn.sendMessage(from, {
-            text: `❌ 𝙾𝚗𝚕𝚢 𝚋𝚘𝚝 𝚘𝚠𝚗𝚎𝚛𝚜 𝚌𝚊𝚗 𝚊𝚍𝚍 𝚘𝚠𝚗𝚎𝚛𝚜\n\n> © Powered by Sila Tech`,
-            contextInfo: getContextInfo({ sender: sender })
-        }, { quoted: fakevCard });
-    }
+    async (conn, mek, m, { from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+        try {
+            // Check if sender is owner or creator
+            if (!isOwner(sender)) {
+                return await conn.sendMessage(from, {
+                    text: `❌ Only bot owners can add owners\n\n> © Powered by BLAZE TECH`,
+                    contextInfo: getContextInfo({ sender: sender })
+                }, { quoted: fakevCard });
+            }
 
-    // Get the number to add
-    let targetJid;
-    
-    if (mek.message.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
-        // If mentioned
-        targetJid = mek.message.extendedTextMessage.contextInfo.mentionedJid[0];
-    } else if (q && q.trim()) {
-        // If provided as argument
-        targetJid = normalizeJid(q.trim());
-    } else {
-        return await conn.sendMessage(from, {
-            text: `❌ 𝙿𝚕𝚎𝚊𝚜𝚎 𝚙𝚛𝚘𝚟𝚒𝚍𝚎 𝚊 𝚗𝚞𝚖𝚋𝚎𝚛 𝚘𝚛 𝚖𝚎𝚗𝚝𝚒𝚘𝚗\n\n> © Powered by Sila Tech`,
-            contextInfo: getContextInfo({ sender: sender })
-        }, { quoted: fakevCard });
-    }
+            // Get the number to add
+            let targetJid;
 
-    // Check if already owner
-    if (isOwner(targetJid)) {
-        return await conn.sendMessage(from, {
-            text: `❌ 𝙿𝚎𝚛𝚜𝚘𝚗 𝚒𝚜 𝚊𝚕𝚛𝚎𝚊𝚍𝚢 𝚊𝚗 𝚘𝚠𝚗𝚎𝚛\n\n> © Powered by Sila Tech`,
-            contextInfo: getContextInfo({ sender: sender })
-        }, { quoted: fakevCard });
-    }
+            if (mek.message.extendedTextMessage?.contextInfo?.mentionedJid?.length) {
+                targetJid = mek.message.extendedTextMessage.contextInfo.mentionedJid[0];
+            } else if (q && q.trim()) {
+                targetJid = normalizeJid(q.trim());
+            } else {
+                return await conn.sendMessage(from, {
+                    text: `❌ Please provide a number or mention\n\n> © Powered by BLAZE TECH`,
+                    contextInfo: getContextInfo({ sender: sender })
+                }, { quoted: fakevCard });
+            }
 
-    // Add owner
-    if (addOwner(targetJid)) {
-        await conn.sendMessage(from, {
-            text: `┏━❑ 𝐍𝐄𝐖 𝐎𝐖𝐍𝐄𝐑 ━━━━━━━━━
-┃ ✅ 𝙽𝚎𝚠 𝚘𝚠𝚗𝚎𝚛 𝚊𝚍𝚍𝚎𝚍
+            // Check if already owner
+            if (isOwner(targetJid)) {
+                return await conn.sendMessage(from, {
+                    text: `❌ Person is already an owner\n\n> © Powered by BLAZE TECH`,
+                    contextInfo: getContextInfo({ sender: sender })
+                }, { quoted: fakevCard });
+            }
+
+            // Add owner
+            if (addOwner(targetJid)) {
+                await conn.sendMessage(from, {
+                    text: `┏━❑ NEW OWNER ━━━━━━━━━
+┃ ✅ New owner added
 ┃ 👑 ${targetJid.split('@')[0]}
 ┗━━━━━━━━━━━━━━━━━━━━
 
-> © Powered by Sila Tech`,
-            contextInfo: getContextInfo({ sender: sender })
-        }, { quoted: fakevCard });
-    } else {
-        await conn.sendMessage(from, {
-            text: `❌ 𝙵𝚊𝚒𝚕𝚎𝚍 𝚝𝚘 𝚊𝚍𝚍 𝚘𝚠𝚗𝚎𝚛\n\n> © Powered by Sila Tech`,
-            contextInfo: getContextInfo({ sender: sender })
-        }, { quoted: fakevCard });
-    }
+> © Powered by BLAZE TECH`,
+                    contextInfo: getContextInfo({ sender: sender })
+                }, { quoted: fakevCard });
+            } else {
+                await conn.sendMessage(from, {
+                    text: `❌ Failed to add owner\n\n> © Powered by BLAZE TECH`,
+                    contextInfo: getContextInfo({ sender: sender })
+                }, { quoted: fakevCard });
+            }
 
-} catch (e) {
-    await conn.sendMessage(from, {
-        text: `❌ 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚏𝚊𝚒𝚕𝚎𝚍\n\n> © Powered by Sila Tech`,
-        contextInfo: getContextInfo({ sender: sender })
-    }, { quoted: fakevCard });
-    l(e);
-}
-});
+        } catch (e) {
+            await conn.sendMessage(from, {
+                text: `❌ Command failed\n\n> © Powered by BLAZE TECH`,
+                contextInfo: getContextInfo({ sender: sender })
+            }, { quoted: fakevCard });
+            l(e);
+        }
+    });

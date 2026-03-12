@@ -1,8 +1,8 @@
 const { cmd } = require('../momy');
 const axios = require('axios');
 
-const REPO_IMAGE = 'https://files.catbox.moe/36vahk.png'; // You can replace with your OCTO MD logo if needed
-const REPO_LINK = 'https://github.com/ARNOLDT20/OCTO-MD';
+const REPO_IMAGE = 'https://files.catbox.moe/ejpcue.png'; // You can replace with your OCTO MD logo if needed
+const REPO_LINK = 'https://github.com/ARNOLDT20/Viper-MD'; // Replace with your actual repository link
 
 // Define combined fakevCard 
 const fakevCard = {
