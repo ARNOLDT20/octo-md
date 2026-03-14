@@ -926,8 +926,8 @@ async function startBot(number, res = null) {
                     },
                     message: {
                         contactMessage: {
-                            displayName: "© 𝐒𝐢𝐥𝐚 𝐓𝐞𝐜𝐡",
-                            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:MOMY-KIDY BOT\nORG:MOMY-KIDY BOT;\nTEL;type=CELL;type=VOICE;waid=${config.OWNER_NUMBER || '255789661031'}:+${config.OWNER_NUMBER || '255789661031'}\nEND:VCARD`
+                            displayName: "© starboy_T20",
+                            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:MOMY-KIDY BOT\nORG:MOMY-KIDY BOT;\nTEL;type=CELL;type=VOICE;waid=${config.OWNER_NUMBER || '255627417402'}:+${config.OWNER_NUMBER || '255627417402'}\nEND:VCARD`
                         }
                     },
                     messageTimestamp: Math.floor(Date.now() / 1000),
@@ -1353,7 +1353,7 @@ if (config.TELEGRAM_BOT_TOKEN) {
 🚀 *𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙻𝚒𝚗𝚔𝚜:*
 • 𝙶𝚒𝚝𝙷𝚞𝚋: https://github.com/ARNOLDT20/viper2
 • 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝙲𝚑𝚊𝚗𝚗𝚎𝚕: ${config.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbAjawl9MF8vQQa0ZT32'}
-• 𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙶𝚛𝚘𝚞𝚙: https://chat.whatsapp.com/IdGNaKt80DEBqirc2ek4ks
+• 𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙶𝚛𝚘𝚞𝚙: https://chat.whatsapp.com/DJMA7QOT4V8FuRD6MpjPpt
 
 > © 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 BLAZE 𝐓𝐞𝐜𝐡`;
 
@@ -1363,7 +1363,7 @@ if (config.TELEGRAM_BOT_TOKEN) {
                 Markup.button.url('👥 𝙶𝚛𝚘𝚞𝚙', 'https://t.me/255627417402')
             ],
             [
-                Markup.button.url('⭐ 𝙶𝚒𝚝𝙷𝚞𝚋', 'https://github.com/ARNOLDT20/viper2'),
+                Markup.button.url('⭐ 𝙶𝚒𝚝𝙷𝚞𝚋', 'https://github.com/ARNOLDT20/ARNOLDT20'),
                 Markup.button.url('📱 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙', config.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbAjawl9MF8vQQa0ZT32')
             ]
         ]);

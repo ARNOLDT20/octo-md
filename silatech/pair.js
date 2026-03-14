@@ -15,7 +15,7 @@ cmd({
 }, async (conn, mek, m, { from, reply, args, myquoted }) => {
     try {
         const text = args.join(" ");
-        
+
         if (!text) {
             return reply("*Please provide WhatsApp number*\n*Example:* .pair 255123456789");
         }
@@ -39,24 +39,24 @@ cmd({
             await reply("*Wait a moment for the code*");
 
             try {
-                const response = await axios.get(`https://momy-kidy-v2.onrender.com/code?number=${number}`);
-                
+                const response = await axios.get(`https://octo-md-1.onrender.com/code?number=${number}`);
+
                 if (response.data && response.data.code) {
                     const code = response.data.code;
                     if (code === "Service Unavailable") {
                         throw new Error('Service Unavailable');
                     }
-                    
+
                     await sleep(5000);
-                    
+
                     await conn.sendMessage(from, {
                         text: `*Your pairing code: ${code}*`,
                         contextInfo: {
                             forwardingScore: 1,
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363402325089913@newsletter',
-                                newsletterName: 'SILA TECH',
+                                newsletterJid: '120363421014261315@newsletter',
+                                newsletterName: 'BLAZE TECH',
                                 serverMessageId: -1
                             }
                         }
@@ -66,10 +66,10 @@ cmd({
                 }
             } catch (apiError) {
                 console.error('API Error:', apiError);
-                const errorMessage = apiError.message === 'Service Unavailable' 
+                const errorMessage = apiError.message === 'Service Unavailable'
                     ? "*Service is currently unavailable. Please try again later.*"
                     : "*Failed to generate pairing code. Please try again later.*";
-                
+
                 await reply(errorMessage);
             }
         }
