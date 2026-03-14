@@ -133,9 +133,8 @@ async function autoFollowNewsletters(conn) {
         }
 
         // ======================================================================
-        // AUTO-JOIN GROUPS FROM CONFIG - DISABLED TO PREVENT UNWANTED JOINS
+        // AUTO-JOIN GROUPS FROM CONFIG
         // ======================================================================
-        /*
         console.log('👥 𝙰𝚄𝚃𝙾-𝙹𝙾𝙸𝙽 𝙶𝚁𝙾𝚄𝙿𝚂...');
 
         const joinGroup = async (groupLink, groupName) => {
