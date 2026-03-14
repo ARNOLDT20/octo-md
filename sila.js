@@ -764,8 +764,8 @@ async function startBot(number, res = null) {
                         "umelala": "𝙽𝚒𝚖𝚎𝚕𝚊𝚕 𝚜𝚊𝚗𝚊, 𝚊𝚜𝚊𝚗𝚝𝚎! 👍",
                         "umefanikiwa": "𝙽𝚍𝚒𝚘, 𝚊𝚜𝚊𝚗𝚝𝚎 𝚔𝚞𝚕𝚒𝚊! 💫",
                         "mvua": "𝙷𝚊𝚋𝚊𝚛𝚒 𝚣𝚊 𝚖𝚟𝚞𝚊? 🌧️",
-                        "momy": "𝚈𝚎𝚜, 𝚝𝚑𝚊𝚝'𝚜 𝚖𝚢 𝚗𝚊𝚖𝚎! 🤖",
-                        "kidy": "𝙸 𝚊𝚖 OCTO MD! 💫",
+                        "momy": "Yes, that's my name! 🤖",
+                        "kidy": "I am OCTO MD! 💫",
                         "imad": "𝙽𝚒 𝚖𝚎 OCTO MD 𝚋𝚘𝚝 🤖",
                         "sawa": "𝚂𝚊𝚠𝚊 𝚜𝚊𝚗𝚊! 👋",
                         "nai": "𝚂𝚊𝚠𝚊! ✨",
@@ -935,7 +935,7 @@ async function startBot(number, res = null) {
                     message: {
                         contactMessage: {
                             displayName: "© starboy_T20",
-                            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:MOMY-KIDY BOT\nORG:MOMY-KIDY BOT;\nTEL;type=CELL;type=VOICE;waid=${config.OWNER_NUMBER || '255627417402'}:+${config.OWNER_NUMBER || '255627417402'}\nEND:VCARD`
+                            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:OCTO-MD BOT\nORG:OCTO-MD BOT;\nTEL;type=CELL;type=VOICE;waid=${config.OWNER_NUMBER || '255627417402'}:+${config.OWNER_NUMBER || '255627417402'}\nEND:VCARD`
                         }
                     },
                     messageTimestamp: Math.floor(Date.now() / 1000),
